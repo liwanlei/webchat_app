@@ -1,0 +1,27 @@
+<view class="container">
+    <view class="cate-nav">
+            <view   class="item " >
+            <view class="name active" bindtap="switchCate" data-name='全部'>全部</view>
+            <view class="name" bindtap="switchCate" data-name='待付款'>待付款</view>
+            <view class="name" bindtap="switchCate" data-name='待发货'>待发货</view>
+            <view class="name" bindtap="switchCate" data-name='待收货'>待收货</view>
+            <view class="name" bindtap="switchCate" data-name='待评价'>待评价</view>
+            </view>
+    </view>
+   <view class='order' wx:for="{{orders}}" wx:for-item="item" wx:key='item.id'>
+  <view class='ordenum'> {{item.ordenum}}</view>
+      <navigator class='good'wx:for='{{item.good_ordesr}}' wx:for-item="ittem" url='/pages/goods/goods?id={{ittem.good_id}}' >
+      <image class='gooimg' src='{{ittem.good_img}}'></image>
+      <view>{{ittem.good_id}}
+      <view class='goodname'>{{ittem.goodname}}</view>
+      <view class='selnum'> ￥{{ittem.yuanjia}}</view></view>
+  <view class='goodgui'>颜颜色:{{ittem.guige}} 数量：{{ittem.num}}</view>
+ </navigator>
+   <label class='jine'> 合计￥:{{item.zhifujine}}  </label>   
+   <view class='you'>共{{item.total}}件商品</view>
+   <view class='anniu'>
+   <button size='mini' class='dele' >删除</button>
+   <button size='mini'  class='ping' wx:if="{{!is_ping}}">评价</button>
+    <button size='mini'  class='ping' wx:if="{{is_ping}}">追加评价</button></view>
+   </view>
+    </view>

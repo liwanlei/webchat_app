@@ -1,0 +1,51 @@
+
+.coupons{
+  margin-top:10rpx;
+  width: 100%;
+  height: 245rpx;
+  overflow: hidden;
+}
+.coupons-scroll{
+  white-space: nowrap;
+  height: 245rpx;
+  width: 100%;
+  background-color: #fff;
+}
+.coupons-item{
+  width:70%;
+  height: 175rpx;
+  margin: 10rpx;
+  margin-left: 10%;
+  padding-top: 20rpx;
+  padding-left: 15rpx;
+  background-color: #f1a83b;
+  box-sizing: content-box;
+  font-size: 20rpx;
+  line-height: 35rpx;
+  overflow: hidden;
+  color: #fff;
+  display: inline-block;
+}
+.notuse{
+  color: silver;
+}
+.coupons-item1{
+   width:70%;
+  height: 175rpx;
+  margin: 10rpx;
+  margin-left: 10%;
+  padding-top: 20rpx;
+  padding-left: 15rpx;
+  background-color: silver;
+  box-sizing: content-box;
+  font-size: 20rpx;
+  line-height: 35rpx;
+  overflow: hidden;
+  color: #fff;
+  display: inline-block;
+}
+.isuse{
+  float: right;
+  margin-top: -31px;
+  color: red;
+}

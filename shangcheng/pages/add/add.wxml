@@ -1,0 +1,47 @@
+<!--pages/add/add.wxml-->
+<view class='page'>
+ <block wx:if="{{!hasadd}}" >
+  <view class='noadd'><text>您还没有添加收货地址，请在添加</text></view>
+</block> 
+  <view class="address-list">
+  <view class='a-address' wx:for="{{add.data}}" wx:for-item="item"  wx:key="id" >
+        <view  class='left-text'data-name='{{item.id}}' >
+        <view  class="name-tel">{{item.user}}  {{item.userphone}}</view>
+        <view  class="address-box">{{item.address}}</view>
+        <view wx:if="{{item.is_moren}}" >默认</view>
+        <button wx:if="{{!item.is_moren}}" data-id='{{item.id}}' data-userid="{{item.userid}}" bindtap='shezhi' size='mini'>设置默认</button>
+        </view>
+        <button size='mini' class='btn_edit' data-id='{{item.id}}' data-userid="{{item.userid}}" bindtap='edit'>编辑</button>
+        <button size='mini' class='btn_edit'  data-id='{{item.id}}'  data-userid="{{item.userid}}" bindtap='dele' type='warn'>删除</button>
+      </view>
+       </view>
+<view class="attr-pop-box" hidden="{{!openAttr}}">
+<form bindsubmit="formSubmit" >
+  <view class="attr-pop">
+    <view class="close" bindtap="closeAttr">
+      <image class="icon" src="../../images/icon_close.png"></image>
+    </view>
+    <view class="section" >收件人：<input  name="name" placeholder="收件人名字" focus="{{focus}}" /></view>
+     <view class="section">收件人手机号：<input  name="phone"  type='number' placeholder="收件人手机号" focus="{{focus}}" /></view>
+     <!-- <picker-view indicator-style="height: 50px;" style="width: 100%; height: 300px;" bindchange='bindChange' value="{{value}}"  >
+     <view class="close" bindtap="closeAttr">
+     <image class="icon" src="../../images/icon_close.png"></image>
+     </view>
+    <picker-view-column >
+      <view  style="line-height: 50px" wx:for='{{priver}}'  wx:for-item="item"  wx:key="item" data-res='{{item}}'>{{item}}</view>
+    </picker-view-column>
+    <picker-view-column>
+      <view  style="line-height: 50px">市</view>
+    </picker-view-column>
+    <picker-view-column>
+      <view  style="line-height: 50px"></view>
+    </picker-view-column>
+  </picker-view> -->
+  <view class="section">详细的地址：<input placeholder="详细的收货地址" name="dizhi" focus="{{focus}}"/></view>
+    </view>
+    <button class='addbutton'type='warn' formType="submit">添加收货地址</button>
+</form>
+</view>
+<button class='addbutton'type='warn' bindtap='tianjia' hidden="{{openAttr}}" >添加新收货地址</button>
+</view>
+

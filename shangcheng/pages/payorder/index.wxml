@@ -1,0 +1,91 @@
+<view class="container">
+     <form bindsubmit="createOrder" report-submit="true">
+     <view class="address-box">
+        <view class="add-address" hidden="{{address}}">
+            <view class="title" bindtap="addAddress">新增收货地址</view>
+        </view>
+        <view class="show-address" hidden="{{!address}}" >
+            <view class="name-tel">{{curAddressData.user}}{{curAddressData.phone}}</view>
+            <view class="addr-text">{{curAddressData.address}}</view>
+        </view>
+     </view>
+     <view class="goods-list">
+        <view class="list-title">商品列表</view>
+        <view class="a-goods" wx:for-items="{{goodslist.shopList}}" wx:key="{{index}}" wx:for-item="item"> 
+            <view class="img-box">
+                <image src="{{item.pic[0]}}" class="img" />
+            </view>
+            <view class="text-box">
+                <view class="arow arow01">
+                    <view class="goods-name">{{item.name}}</view>
+                    <view class="goods-price">¥ {{item.price}}</view>
+                </view>
+                <view class="arow">
+                    <view class="goods-label">{{item.yanse}} {{item.guige}}</view>
+                    <view class="goods-num">x {{item.num}}</view>
+                </view>
+            </view>
+        </view>
+     </view>
+     <view class="peisong-way">
+        <view class="row-box" >
+             <view class="row-label">配送方式</view>
+            <!-- <view class="right-text">快递</view>  -->
+            <view class="right-text" >包邮</view>
+        </view>
+        <view class="row-box">
+            <view class="row-label">备注</view>
+            <view class="right-text">
+                <input name="remark" type="text" class="liuyan" placeholder="如需备注请输入" />
+            </view>
+        </view>
+     </view>
+     <view class="peisong-way" hidden="{{!hasNoCoupons}}">
+        <view class="row-box" style="border-bottom:none;">
+            <view class="row-label">选择使用优惠券</view>
+        </view>
+        <view class="row-box" style="border-bottom:none;">
+          <picker-view indicator-style="height: 50rpx;" style="width: 100%; height: 150rpx;" value="0" bindchange="bindChangeCoupon">
+            <picker-view-column>
+              <view style="line-height: 50px">不使用优惠券</view>
+              <view wx:for="{{coupons}}" wx:key="id" style="line-height: 50px">{{item.money}}元 {{item.name}}</view>
+            </picker-view-column>
+          </picker-view>
+        </view>
+     </view>
+     <view class="goods-info" >
+        <view class="row-box">
+            <view class="row-label">商品金额</view>
+            <view class="right-text">¥ {{allGoodsPrice}}</view>
+        </view>
+        <view class="row-box" >
+            <view class="row-label">运费</view>
+            <view class="right-text">+ ¥ {{yunfei}}</view>
+        </view>
+        <view class="row-box" wx:if="{{hasNoCoupons}}">
+            <view class="row-label">优惠券</view>
+            <view class="right-text">- ¥ {{youhuijine}}</view>
+        </view>
+     </view>
+     <view class="jiesuan-box">
+        <view class="left-price">
+            <view class="total">合计：¥ {{allGoodsAndYunPrice}}</view>
+        </view>
+        <button class="to-pay-btn" formType="submit">提交订单</button>
+    </view>
+    </form>
+    </view>
+    <!-- <view class="attr-pop-box" hidden="{{!openAttr}}">
+<form bindsubmit="formSubmit" >
+  <view class="attr-pop">
+    <view class="close" bindtap="closeAttr">
+      <image class="icon" src="../../images/icon_close.png"></image>
+    </view>
+    <view class="section" >收件人：<input  name="name" placeholder="收件人名字" focus="{{focus}}" /></view>
+     <view class="section">收件人手机号：<input  name="phone"  type='number' placeholder="收件人手机号" focus="{{focus}}" />
+  <view class="section">详细的地址：<input placeholder="详细的收货地址" name="dizhi" focus="{{focus}}"/></view>
+    </view>
+    <button class='addbutton'type='warn' formType="submit">选择收货地址</button>
+</view>
+</form>
+</view> -->

@@ -1,0 +1,40 @@
+<view wx:if="{{hsyouhui==false}}">
+  暂时没有优惠券，可去往首页领取，
+ </view>
+<block wx:for="{{youhui}}"  wx:key="id" wx:for-item="item">
+<view wx:if="{{item.use==false &&item.canuse==true}}" class='canuse'>
+            <view class="coupons-item"   data-id="{{item.id}}">
+            <view class='ziti'>
+               <view style="font-size: 35rpx"> ￥{{item.jian_num}}元 </view>
+               <view> 满 {{item.man_num}} 元使用 </view>
+               <view >{{item.endtime}}前有效 </view>
+               <view > 领取 {{item.linqu}} 天内有效 </view>
+                <view wx:if='{{item.cate!=true}}'>仅限{{item.cate}}类使用</view>
+                </view>  
+                 <button class='isuse' size='mini' bindtap='quwang' data-lei='{{item.cate}}'>去使用</button> 
+            </view> </view>   
+<view wx:if="{{item.canuse==false && item.use==false}}" class='notuse'>
+            <view class="coupons-item1"   data-id="{{item.id}}">
+            <view class='ziti'>
+               <view style="font-size: 35rpx"> ￥{{item.jian_num}}元 </view>
+               <view> 满 {{item.man_num}} 元使用 </view>
+               <view >{{item.endtime}}前有效 </view>
+               <view > 领取 {{item.linqu}} 天内有效 </view>
+                <view wx:if='{{item.cate!=true}}'>仅限{{item.cate}}类使用</view>
+                </view>   
+                <text class='isuse'>超过有效期</text>
+            </view>  </view> 
+<view wx:if='{{item.canuse==true && item.use==true}}' class='notuse'>
+            <view class="coupons-item1"   data-id="{{item.id}}">
+            <view class='ziti'>
+               <view style="font-size: 35rpx"> ￥{{item.jian_num}}元 </view>
+               <view> 满 {{item.man_num}} 元使用 </view>
+               <view >{{item.endtime}}前有效 </view>
+               <view > 领取 {{item.linqu}} 天内有效 </view>
+                <view wx:if='{{item.cate!=true}}'>仅限{{item.cate}}类使用</view>
+             </view> 
+             <text class='isuse'>已经使用</text>   
+              </view> 
+             </view>   
+             </block>
+            

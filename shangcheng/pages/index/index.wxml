@@ -1,0 +1,57 @@
+<!--index.wxml-->
+<view class="container">
+  <swiper class="banner" indicator-dots="true" autoplay="true" interval="3000" duration="1000">
+  <block wx:for="{{banner.data}}" wx:for-item="item"  wx:key="id">
+    <swiper-item >
+      <navigator url="">
+        <image src="{{item.img}}" background-size="cover"></image>
+      </navigator>
+    </swiper-item>
+     </block>
+  </swiper>
+  <view class="coupons" >
+    <view class='youhuiquan'>优惠券</view>
+        <scroll-view class="coupons-scroll" scroll-x="true">
+        <block wx:for="{{youhui.data}}"  wx:key="id" wx:for-item="item">
+            <view class="coupons-item"   data-id="{{item.id}}">
+            <view class='ziti'>
+               <view style="font-size: 35rpx"> ￥{{item.jian_num}}元 </view>
+               <view> 满 {{item.man_num}} 元使用 </view>
+               <view >{{item.endtime}}前有效 </view>
+               <view > 领取 {{item.lingqu}} 天内有效 </view>
+                <view wx:if='{{item.cate!=true}}'>仅限{{item.cate}}类使用</view>
+                </view>
+                 <button  size='mini'  class='lingqu' bindtap='lingqu'  data-id="{{item.id}}" >领取</button>
+                   <button open-type="getUserInfo">获取用户信息</button>  
+            </view>
+            </block>
+        </scroll-view>
+    </view>
+  </view>
+  <view class="container">
+    <view class='rexiao'>
+    <view class=''>热销榜</view>
+     </view>
+    <view class="bd">
+     <block wx:for="{{rexiao.good}}" wx:for-item="item"  wx:key="id">
+            <navigator class='first' url='/pages/goods/goods?id={{item.id}}' >
+                <image class="img" src="{{item.img}}" background-size="cover"></image>
+                <text class="name">{{item.name}}</text>
+                <text class="price">￥{{item.xianjian}}</text>
+            </navigator>
+           </block>
+    </view>
+      <view>
+      </view>热门推荐<view>
+      <block wx:for="{{tuijian.good}}" wx:for-item="item"  wx:key="id">
+      <view class='renqi'>
+        <navigator class=''  url='/pages/goods/goods?id={{item.id}}'>
+                <image class="img1" src="{{item.img}}" background-size="cover"></image>
+                <view class='end'>
+                <text class="name">{{item.name}}</text>
+                <text class="price1">{{item.gooddesc}}</text></view></navigator>
+                </view>
+        </block>
+       </view>     
+      
+  </view>

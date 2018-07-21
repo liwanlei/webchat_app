@@ -1,0 +1,93 @@
+.konggouwuche{
+  height:155px;
+  width:203px;
+  border-radius:50%;
+  margin-left: 25%;
+}
+.wenzi{
+  text-align: center;
+  color: red;
+}
+.daohang{
+  text-align: center;
+  color: blue;
+}
+.itemgood{
+    background: #f7f7f7;
+}
+.check{
+  float: left;
+}
+.sangping{
+  float: right;
+}
+.imgs{
+  height:83px;
+width:70px;
+}
+.selnum {
+  width: 322rpx;
+  height: 71rpx;
+  border: 1px solid #ccc;
+  display: flex;
+  margin-left:32%;
+}
+.cut {
+  width: 93.75rpx;
+  height: 100%;
+  text-align: center;
+  line-height: 65rpx;
+}
+.number {
+  flex: 1;
+  height: 100%;
+  text-align: center;
+  line-height: 68.75rpx;
+  border-left: 1px solid #ccc;
+  border-right: 1px solid #ccc;
+  float: left;
+}
+.add {
+  width: 93.75rpx;
+  height: 100%;
+  text-align: center;
+  line-height: 65rpx;
+}
+.shoop{
+ margin-left:116px;
+margin-top:-90px;
+}
+.shang{
+  margin-top:11px;
+}
+.price{
+  float:left;
+}
+.xiadan {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  z-index: 10;
+  width: 750rpx;
+  height: 100rpx;
+  display: flex;
+  background: #fff;
+}
+.allpruice{
+  margin-top: 3px;
+  margin-left: 10px;
+}
+.xiadan-btn{
+  height:32px;
+  margin-left:45%;
+}
+.xiadan-btn{
+  border: 1px solid #b4282d;
+  background: #b4282d;
+  margin-left:13%;
+  height: 100rpx;
+  line-height: 96rpx;
+  flex: 1;
+  text-align: center;
+  color: #fff;
+}

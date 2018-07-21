@@ -1,0 +1,20 @@
+<view class=''>
+ <view wx:if="{{!hsgood}}">
+ <navigator url='pages/index/index'>
+   <view>还没有收藏，请去浏览商品</view>
+   </navigator>
+ </view>
+ <view wx:if="{{hsgood}}">
+ <view wx:for="{{goods}}" wx:for-item="item">
+ <view class="bd">
+            <navigator class='first' url='/pages/goods/goods?id={{item.goodid}}' >
+                <image class="img" src="{{item.pic}}" background-size="cover"></image>
+                <text class="name">{{item.name}}</text>
+                <text class="price" wx:if="{{item.goodstatus}}">   暂停销售</text>
+                <text class="price" wx:if="{{item.goodstatus}} &&{{ item.goodjiage==item.shoucangjia}}"> ￥ {{item.goodjiage}} <text class='chajia'>{{item.chajia}}</text></text>
+            </navigator>
+    </view>
+ </view>
+
+  </view>
+ </view>

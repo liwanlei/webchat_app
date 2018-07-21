@@ -1,0 +1,28 @@
+<view class="user-info">
+        <image src="{{userInfo.avatarUrl}}"></image>
+        <text>{{userInfo.nickName}} </text> 
+    </view>
+        <navigator class="kind-list-item" url='../order/order'>
+          <view id="" class="kind-list-item-hd " >
+           <image  class='imgs' src='../../images/order-on.png'></image>
+            <view class="kind-list-text" >我的订单</view>
+          </view>
+          </navigator>
+          <navigator class="kind-list-item" url='../youhui/youhui'>
+           <view id="" class="kind-list-item-hd ">
+          <image  class='imgs' src='../../images/quan.png'></image>
+            <view class="kind-list-text">我的优惠券</view>
+          </view>
+        </navigator>  
+         <navigator class="kind-list-item" url='../add/add'>
+          <view id="" class="kind-list-item-hd " >
+          <image  class='imgs' src='../../images/ico-addr.png'></image>
+            <view class="kind-list-text">收货地址管理</view>
+          </view>
+          </navigator>
+           <navigator class="kind-list-item" url='../cang/cang'>
+          <view id="" class="kind-list-item-hd " >
+          <image  class='imgs' src='../../images/icon_collect_checked.png'></image>
+            <view class="kind-list-text"> 我的收藏</view>
+          </view>
+          </navigator>

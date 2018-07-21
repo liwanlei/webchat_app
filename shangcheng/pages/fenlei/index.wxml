@@ -1,0 +1,27 @@
+  <view class="search">
+    <navigator url="/pages/search/search" class="input">
+      <image class="icon"></image>
+      <text class="txt">商品搜索 </text>
+    </navigator>
+  </view>
+  <view class="catalog"> 
+    <scroll-view class="nav" scroll-y="true">
+     <block wx:for="{{fenlei}}" wx:for-item="item"  wx:key="id">
+        <view data-name='{{item.name}}' bindtap='fenleis'>{{item.name}}</view>
+       </block>
+    </scroll-view>
+    <scroll-view class="cate" scroll-y="true">
+        <navigator url="url" class="banner">
+            <image class="image" src="{{bann.data.banner}}"></image>
+            <view class="txt"></view>
+        </navigator>        
+        <view class="bd">
+         <block wx:for="{{bann.data.data}}"  wx:key="id" wx:for-item="item">
+            <navigator url="/pages/fenleigood/index?id={{item.id}}" class='ce'>
+                <image class="icon" src="{{item.icon}}"></image>
+                <text class="txt">{{item.name}}</text>
+            </navigator>
+            </block>
+        </view>
+    </scroll-view>
+  </view>

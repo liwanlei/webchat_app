@@ -1,0 +1,36 @@
+<view wx:if="{{hasgood==false}}">
+  <image class='konggouwuche'src='../../images/gouwche.png'></image>
+  <view class='wenzi'>购物车是空的！可以去看看：</view>
+  <view class='daohang' bindtap='wodesgoucang'>我的收藏</view>
+  <view class='daohang' bindtap='usergou'>已经买到</view>
+</view>
+<view wx:if="{{hasgood==true}}">
+<checkbox-group bindchange="checkboxChange" >
+<view class='quanxaun'>
+<checkbox  class="checkbox" value='all' >全选</checkbox></view>
+  <block wx:for-items="{{cartgood}}" wx:for-item="item"  >
+  <view class='shang'>
+  <view  class='itemgood'>
+   <checkbox  class="checkbox check" checked="{{item.checked}}" value="{{index}}"></checkbox>
+   <image  class='imgs' src='{{item[0].pic}}'></image>
+   <view class='shoop'>
+   <view>{{item[0].name}}</view>
+  <view >规格：{{item[0].guige}} 颜色:{{item[0].yanse}}</view>
+  <view>
+  <view class='price'>￥{{item[0].price}}</view>
+  <view class="selnum">
+          <view class="cut" bindtap="cutNumber"  data-id='{{index}}'>-</view>
+          <input value="{{item[0].num}}  " class="number" disabled="true" type="number" />
+          <view class="add" bindtap="addNumber"  data-id='{{index}}'>+</view>
+        </view></view>
+  </view>
+  </view>
+  </view>
+  </block>
+  <view class='xiadan'>
+ <checkbox  class="checkbox" value='all' >全选</checkbox>
+ <view class='allpruice'>总计：6555555</view>
+<view class="r" bindtap="addToCart" class='xiadan-btn'>支付</view>
+</view>
+</checkbox-group>
+</view>

@@ -1,0 +1,42 @@
+
+.bd{
+  width: 100%
+}
+.first{
+  float: left;
+  background: #fff;
+  width: 50%;
+  margin-bottom: 6.25rpx;
+  padding-bottom: 33.333rpx;
+  height: auto;
+  overflow: hidden;
+  text-align: center;
+}
+.end{
+  float: left;
+  background-color: white
+}
+.img1{
+   width: 302rpx;
+  height: 335rpx;
+}
+.renqi{
+  height: 200px;
+}
+.price1{
+  height:268rpx;
+  display: block;
+  width: 365.625rpx;
+  text-align: center;
+  font-size: 30rpx;
+  color: #b4282d;
+}
+.gengduo{
+  margin-top: 10px;
+}
+page{
+  background-color: beige
+}
+.chajia{
+  color: red
+}
